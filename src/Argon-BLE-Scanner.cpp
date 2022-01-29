@@ -66,8 +66,8 @@ void loop() {
             }
 
             Log.info("MAC: %02X:%02X:%02X:%02X:%02X:%02X | RSSI: %dBm | %s ",
-                    scanResults[ii].address()[0], scanResults[ii].address()[1], scanResults[ii].address()[2],
-                    scanResults[ii].address()[3], scanResults[ii].address()[4], scanResults[ii].address()[5], scanResults[ii].rssi(), name.c_str());
+                    scanResults[ii].address()[5], scanResults[ii].address()[4], scanResults[ii].address()[3],
+                    scanResults[ii].address()[2], scanResults[ii].address()[1], scanResults[ii].address()[0], scanResults[ii].rssi(), name.c_str());
 
  
         }
@@ -88,8 +88,8 @@ void getReadingsFromDevice() {
     Vector<BleScanResult> scanResults = BLE.scanWithFilter(filter);
 
     Log.info("Filtering for MAC: %02X:%02X:%02X:%02X:%02X:%02X ",
-                    address[0], address[1], address[2],
-                    address[3], address[4], address[5]);
+                    address[5], address[4], address[3],
+                    address[2], address[1], address[0]);
 
     if (scanResults.size()) {
         Log.info("%d device found", scanResults.size());
